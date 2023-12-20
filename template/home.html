@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>This home html page</title>
+</head>
+<body>
+
+    <h1>Main page</h1>
+    <div>Пользователь: {{.Name}}</div>
+
+    {{ if eq .Name "Salemvi"}}
+    <span>Maybe Vadim?</span>
+    {{else}}
+    <span>This true</span>
+    {{end}}
+
+    <div>Возраст: {{.Age}}</div>
+    <div>Деньги: {{.Money}}</div>
+    <div>Оценки: {{.AverageGrades}}</div>
+    <div>Настроение: {{.Happiness}}</div>
+    <div>Хобби:</div>
+    <ul>
+        {{range .Hobbies}}
+            <li><b>{{.}}</b></li>
+        {{else}}
+            <li>У меня нет хобби</li>
+        {{end}}
+    </ul>
+</body>
+</html>
